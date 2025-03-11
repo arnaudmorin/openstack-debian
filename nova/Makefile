@@ -1,6 +1,5 @@
 VENV := $(DESTDIR)/opt/openstack/nova/
-#REPO := https://opendev.org/openstack/nova.git
-REPO := /home/arnaud/dev/openstack/nova
+REPO := https://opendev.org/openstack/nova.git
 RELEASE := stable/2024.2
 SRC := $(CURDIR)/src
 
