@@ -1,0 +1,13 @@
+Source: openstack-neutron
+Section: python
+Priority: optional
+Maintainer: Arnaud Morin <arnaud.openstack@mailops.fr>
+Build-Depends: debhelper (>= 13), python3, python3-venv, git
+Standards-Version: 3.9.6
+Homepage: https://opendev.org/openstack/neutron
+
+Package: openstack-neutron
+Architecture: all
+Depends: python3, adduser, openvswitch-switch
+Description: OpenStack Nova installation package
+ This package installs OpenStack Nova from source using pip in a virtual environment.
