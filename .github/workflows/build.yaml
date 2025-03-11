@@ -24,11 +24,11 @@ jobs:
 
     - name: Build Debian package
       run: |
-        dpkg-buildpackage -b -uc
+        cd nova/ && dpkg-buildpackage -b -uc
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: debian-package
-        path: '../*.deb'
+        path: '*.deb'
 
