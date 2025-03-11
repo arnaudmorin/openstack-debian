@@ -1,18 +1,18 @@
-# Variables
-VENV := ${DESTDIR}/opt/openstack/nova/
-REPO := https://opendev.org/openstack/nova.git
+VENV := $(DESTDIR)/opt/openstack/nova/
+#REPO := https://opendev.org/openstack/nova.git
+REPO := /home/arnaud/dev/openstack/nova
+RELEASE := stable/2024.2
+SRC := $(CURDIR)/src
 
-# Cibles
-all: 
-	$(eval TMP := $(shell mktemp -d))
-	@mkdir $(TMP)/src
+build:
+	git clone $(REPO) $(SRC) -b $(RELEASE)
+
+install:
 	python3 -m venv $(VENV)
-	git clone $(REPO) $(TMP)/src
-	$(VENV)/bin/pip install -c https://opendev.org/openstack/requirements/raw/branch/stable/2024.2/upper-constraints.txt -r $(TMP)/src/requirements.txt $(TMP)/src
-	rm -rf $(TMP)
+	$(VENV)/bin/pip install -c https://opendev.org/openstack/requirements/raw/branch/$(RELEASE)/upper-constraints.txt -r $(SRC)/requirements.txt $(SRC)
 
 clean:
-	rm -rf $(VENV)
+	rm -rf $(SRC)
 
-.PHONY: all clean
+.PHONY: install clean
 

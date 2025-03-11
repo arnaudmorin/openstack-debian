@@ -8,7 +8,6 @@ Homepage: https://opendev.org/openstack/nova
 
 Package: openstack-nova
 Architecture: all
-Depends: ${python3:Depends}, python3
+Depends: python3, adduser, conntrack, cgroup-tools, curl, dosfstools, ebtables, fdisk, gawk, iptables, kpartx, open-iscsi, ovmf, parted, qemu-utils, rsync, vlan
 Description: OpenStack Nova installation package
  This package installs OpenStack Nova from source using pip in a virtual environment.
-
