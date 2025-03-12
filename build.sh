@@ -1,7 +1,2 @@
 #!/bin/bash
-
-find * -maxdepth 0 -type d | while read folder ; do
-    cd $folder
-    dpkg-buildpackage -b -uc
-    cd ..
-done
+docker run -it -v $PWD:/v/ debian:bookworm bash -c '/v/build-in-docker.sh'
