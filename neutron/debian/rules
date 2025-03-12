@@ -1,12 +1,14 @@
 #!/usr/bin/make -f
+DEST_DIR=$(CURDIR)/debian/openstack-neutron/
+
 %:
 	dh $@
 
-override_dh_install:
-	dh_install
+override_dh_auto_install:
+	dh_auto_install
 	# Install the whole virtualenv folder in package
-	mkdir -p $(DESTDIR)/opt/openstack
-	cp -ar /opt/openstack/neutron/ $(DESTDIR)/opt/openstack/
+	mkdir -p $(DEST_DIR)/opt/openstack/
+	cp -ar /opt/openstack/neutron/ $(DEST_DIR)/opt/openstack/
 
-# Do nothing
-override_dh_auto_configure override_dh_auto_build override_dh_auto_test override_dh_auto_install override_dh_auto_clean override_dh_strip_nondeterminism:
+# Save some time
+override_dh_strip_nondeterminism:
