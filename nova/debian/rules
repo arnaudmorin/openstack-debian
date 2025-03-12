@@ -1,3 +1,12 @@
 #!/usr/bin/make -f
 %:
 	dh $@
+
+override_dh_install:
+	dh_install
+	# Install the whole virtualenv folder in package
+	mkdir -p $(DESTDIR)/opt/openstack
+	cp -ar /opt/openstack/nova/ $(DESTDIR)/opt/openstack/
+
+# Do nothing
+override_dh_auto_configure override_dh_auto_build override_dh_auto_test override_dh_auto_install override_dh_auto_clean override_dh_strip_nondeterminism:

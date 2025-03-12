@@ -1,4 +1,4 @@
-VENV := $(DESTDIR)/opt/openstack/neutron/
+VENV := /opt/openstack/neutron/
 REPO := https://opendev.org/openstack/neutron.git
 RELEASE := stable/2024.2
 SRC := $(CURDIR)/src
