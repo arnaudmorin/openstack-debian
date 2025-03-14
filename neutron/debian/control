@@ -8,6 +8,6 @@ Homepage: https://opendev.org/openstack/neutron
 
 Package: openstack-neutron
 Architecture: all
-Depends: python3, adduser, openvswitch-switch, keepalived, haproxy, iptables, iputils-arping, radvd, sudo, dnsmasq-base, dnsmasq-utils
+Depends: python3, adduser, openvswitch-switch, keepalived, haproxy, iptables, iputils-arping, radvd, sudo, dnsmasq-base, dnsmasq-utils, haproxy
 Description: OpenStack Nova installation package
  This package installs OpenStack Nova from source using pip in a virtual environment.
