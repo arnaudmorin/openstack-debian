@@ -16,7 +16,7 @@ export DEBEMAIL="arnaud.openstack@mailops.fr"
 
 find * -maxdepth 0 -type d | while read folder ; do
     cd $folder
-    dch -b -v "2024.2-${C}+${S}" "New release"
+    dch -b -v "2025.1-${C}+${S}" "New release"
     yes | mk-build-deps -i debian/control
     dpkg-buildpackage -b -uc
     cd ..

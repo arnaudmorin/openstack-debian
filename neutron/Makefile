@@ -1,4 +1,4 @@
-RELEASE := stable/2024.2
+RELEASE := stable/2025.1
 PY_VER := 3.11.9
 DEST := /opt/openstack/neutron/
 REPO := https://opendev.org/openstack/neutron.git
