@@ -19,6 +19,7 @@ find * -maxdepth 0 -type d | while read folder ; do
     dch -b -v "2025.2-${C}+${S}" "New release"
     yes | mk-build-deps -i debian/control
     dpkg-buildpackage -b -uc
+    make clean
     cd ..
 done
 

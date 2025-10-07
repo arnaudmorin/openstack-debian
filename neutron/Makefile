@@ -14,5 +14,6 @@ install:
 
 clean:
 	rm -rf $(SRC)
+	rm -rf $(CURDIR)/*.deb
 
 .PHONY: install clean
