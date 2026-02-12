@@ -1,7 +1,7 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y build-essential dpkg-dev devscripts vim
+apt-get install -y build-essential dpkg-dev devscripts vim equivs
 
 DIR=$(dirname $(readlink -f $0))
 git config --global --add safe.directory $DIR
