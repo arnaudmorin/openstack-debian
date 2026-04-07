@@ -13,6 +13,7 @@ install:
 	sed -i "s|sudo nova-rootwrap|sudo $(DEST)/bin/nova-rootwrap|" $(SRC)/nova/utils.py
 	$(DEST)/bin/pip install -c https://opendev.org/openstack/requirements/raw/branch/$(RELEASE)/upper-constraints.txt -r $(SRC)/requirements.txt $(SRC)
 	$(DEST)/bin/pip install -c https://opendev.org/openstack/requirements/raw/branch/$(RELEASE)/upper-constraints.txt libvirt-python
+	$(DEST)/bin/pip install git+https://github.com/arnaudmorin/oslo.messaging.git
 	sed -i "s|^exec_dirs.*|exec_dirs=$(DEST)/bin,/sbin,/usr/sbin,/bin,/usr/bin,/usr/local/bin,/usr/local/sbin,/etc/neutron/kill_scripts|g" $(DEST)/etc/nova/rootwrap.conf
 
 clean:
