@@ -1,5 +1,5 @@
-RELEASE := stable/2025.2
-PY_VER := 3.11.9
+RELEASE := stable/2026.1
+PY_VER := 3.13.12
 DEST := /opt/openstack/nova/
 REPO := https://opendev.org/openstack/nova.git
 SRC := $(CURDIR)/src
