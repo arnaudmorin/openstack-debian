@@ -13,6 +13,14 @@ $ sudo bash build.sh
 
 The `.deb` packages will then be given to you in the root folder of this repo.
 
+## Automated build
+A GitHub Actions workflow (`.github/workflows/build.yml`) builds the packages on every
+pull request and every push to a release branch (e.g. `2026.2`).
+
+On a push to a release branch, it also creates the matching GitHub release
+(`v<release>-<commit count>+<short sha>`) with the `.deb` files attached.
+For a pull request, the packages are only available as a workflow artifact.
+
 ## Upload a new release
 When the packages are built, we can create a new release on github using:
 
