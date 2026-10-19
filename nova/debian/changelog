@@ -1,6 +1,6 @@
-openstack-nova (2026.1-1) unstable; urgency=medium
+openstack-nova (2026.2-1) unstable; urgency=medium
 
   * Initial release.
 
- -- Arnaud Morin <arnaud.openstack@mailops.fr>  Tue, 07 Apr 2026 23:22:37 +0200
+ -- Arnaud Morin <arnaud.openstack@mailops.fr>  Mon, 19 Oct 2026 10:22:41 +0200
 
