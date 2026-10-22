@@ -14,7 +14,8 @@ install:
 	$(DEST)/bin/pip install -c https://opendev.org/openstack/requirements/raw/branch/$(RELEASE)/upper-constraints.txt -r $(SRC)/requirements.txt $(SRC)
 	$(DEST)/bin/pip install -c https://opendev.org/openstack/requirements/raw/branch/$(RELEASE)/upper-constraints.txt libvirt-python
 	$(DEST)/bin/pip install git+https://github.com/arnaudmorin/oslo.messaging.git@$(RELEASE)
-	$(DEST)/bin/pip install blazingmq
+	# NOTE(arnaud) BlazingMQ SDK with authentication and TLS, from the fork until it is released upstream
+	$(DEST)/bin/pip install https://github.com/arnaudmorin/blazingmq-sdk-python/releases/download/v1.2.3-secure.e307e1a/blazingmq-1.2.3-cp313-cp313-manylinux_2_28_x86_64.whl
 	sed -i "s|^exec_dirs.*|exec_dirs=$(DEST)/bin,/sbin,/usr/sbin,/bin,/usr/bin,/usr/local/bin,/usr/local/sbin,/etc/neutron/kill_scripts|g" $(DEST)/etc/nova/rootwrap.conf
 
 clean:
