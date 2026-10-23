@@ -1,4 +1,7 @@
 #!/bin/bash
+# NOTE(arnaud) stop at the first error, so that a package which fails to build
+# fails the build, instead of a build with packages missing
+set -e
 
 apt-get update
 apt-get install -y build-essential dpkg-dev devscripts vim equivs
